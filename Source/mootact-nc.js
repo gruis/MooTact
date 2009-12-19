@@ -1,3 +1,16 @@
+/*
+---
+description: MooTact class displays a custom contact form, posts the user's message to the server and handles the JSON response.
+
+license: MIT-style
+
+authors:
+- Caleb Crane
+
+requires: [Request.JSON, Element.Position, Spinner, Mask]
+provides: [MooTact]
+
+*/
 /* 
   Copyright (c) 2009 Caleb Crane <license [at] simulacre.org>, Simulacre Publishing LLC
 
