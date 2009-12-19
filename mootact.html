@@ -1,0 +1,72 @@
+<html>
+<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<title>MooTact Test Page</title>
+
+	<link rel="stylesheet" href="mootact.css" type="text/css" media="screen" title="MooTact" charset="utf-8" />
+	<style type="text/css" media="screen">
+			html, body{ padding:0; margin:0; }
+			body { font-family: "Arial Rounded", "Arial Rounded MT Bold",sans-serif;}
+
+			a{ text-decoration: none; outline: 0; -moz-outline: 0; }
+			#nav{ width:160px; margin: 100px auto 0;}
+
+
+			.mask {
+					opacity: 0.9;
+					filter: alpha(opacity=90);
+					-ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=90);
+			  	-moz-opacity: 0.9;
+					z-index: 1;
+			  	background-color:#241f20;
+			}
+
+			#mootact_button{
+			    background: transparent url(mail0a.png) no-repeat 0 12px;
+				  padding: 32px 32px 32px 72px;
+			    font-size:14pt;
+			}
+			#mootact_button:hover{
+				  position:relative;
+			    left:1px;
+			    cursor:pointer;
+			}
+			#mootact_button:active{
+			    top:2px;
+			}
+	 
+	</style>
+	
+  <script type="text/javascript" src="/js/mootools-1.2.4-core.js"></script>
+  <script type="text/javascript" src="/js/mootools-1.2.4.2-more.js"></script>      
+
+
+	<script type="text/javascript" src="mootact.js"></script>
+
+
+
+  <script type="text/javascript" charset="utf-8">
+		window.addEvent("domready", function(){
+			  	$('mootact_button').addEvent("click", function(e){
+						      e.stop();
+						      new MooTact( { 
+																 title : 'MooTact Contact Form', 
+																 pelem : document.body,
+						                     onSuccess: function(){  $("notify").set('html', 'E-mail sent ... Thank you!' ); } 
+                   }).show(); 
+				  });			
+		});
+  </script>
+</head>
+
+<body id="mootact">
+
+		<div id="nav">
+				<a href="#" id="mootact_button">Contact</a>
+		</div>
+		<div id="content">
+				<p id="notify"></p>
+		</div>
+		
+</body>
+</html>

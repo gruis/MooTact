@@ -1,0 +1,144 @@
+
+/* ========================== [ MooTact ] ================================
+ * ====---------------------------------------------------------------====
+ *      MooTools based Contact Form
+ *
+ * Icons ©Gnome Icon Artists http://gnome.org/
+ * ====---------------------------------------------------------------====
+ * ========================== [ MooTact ] ================================ */
+
+
+
+ form.mootact{
+	  font-family: "Arial Rounded", "Arial Rounded MT Bold", sans-serif;	
+	  font-size:12pt;
+	
+     z-index:2;
+     padding:50px 140px 50px 50px;
+     background-color:white;
+     border:4px solid #dedede;
+     -moz-border-radius: 20px; 
+     -webkit-border-radius: 20px;
+     -border-radius: 20px;
+     width:450px;
+ }
+
+ .mootact .dismiss{
+     	position:absolute;
+     	right:10px;
+     	top:10px;
+	  	background: url(close0a.png) no-repeat; 
+	  	display:block; 
+		padding:16px;
+	  	font-size:0;
+	  	color:white;
+ }
+ .mootact .dismiss:hover{
+     left:auto;
+     top:11px;
+     position:absolute;
+ }
+
+
+ form.mootact h2{
+     text-align:right;
+ }
+ .mootact .form-row{
+		margin:15px 0;
+  }
+ .mootact .form-row label {
+   margin-right:1em;
+   padding-right:0.75em;
+   display:block;
+   width:93px;
+   text-align:right;
+   float:left;
+ }
+ .mootact .form-row:after{
+   content: "."; display: block; height: 0; clear: both; visibility: hidden;
+ }
+ .mootact input[type="text"]{
+     width:329px;
+     background-color: #DDDDDD;
+     border: 1px solid #BBBBBB;
+
+     color:#595959;
+     font-family: "Arial Rounded", "Arial Rounded MT Bold", sans-serif;
+     font-size:12pt;
+ }
+ .mootact input[type="text"]:focus{
+     background-color:#d3d6df;
+     border-color: #c9b1b1;
+     outline-width:0;
+ }
+ .mootact textarea{
+     width:329px;
+     height:150px;
+     background-color: #DDDDDD;
+     border: 1px solid #BBBBBB;
+
+     color:#595959;
+     font-family: "Arial Rounded", "Arial Rounded MT Bold", sans-serif;
+     font-size:12pt;
+ }
+ .mootact textarea:focus{
+     background-color:#d3d6df;
+     border-color: #c9b1b1;
+     outline-width:0;
+ }
+ .mootact .form-row.submit{
+		padding-left:120px;
+ }
+
+ .mootact input[type="submit"]{
+		font-size:11pt;
+		background: transparent url(send0a.png) no-repeat 0 3px;
+		border: 0px !important;
+		cursor: hand;
+		cursor: pointer;
+		padding: 8px 0 8px 34px;
+		color:#277523;
+		outline:none;
+		-moz-outline: 0;
+ }
+ .mootact input[type="submit"]:hover{
+		position:relative;
+		left:1px;
+ }
+ .mootact input[type="submit"]:active{
+		top:1px;
+ }
+
+
+ .mootact .error{
+		font-size:8pt;
+     	color:#d74840;
+     	font-weight:bold;
+ }
+
+ .mask.mootact {
+ 	z-index: 1001;
+   background:#dedede;
+   -moz-border-radius: 20px; 
+     -webkit-border-radius: 20px;
+     -border-radius: 20px;
+ }
+ .mask.mootact p.spinner-msg{
+   color:black;
+ }
+ .mootact .field.error{
+     width:130px;
+     padding:5px 10px;
+
+     -moz-border-radius: 3px; 
+     -webkit-border-radius: 3px;
+     -border-radius: 3px;
+
+     opacity: 0.9;
+   	filter: alpha(opacity=90);
+   	-ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=90);
+
+   	border:1px solid #000;
+   	background-color:#3e3e3e;
+   	color:#d74840;
+ }
