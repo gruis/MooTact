@@ -71,14 +71,17 @@ var MooTact = new Class({
                         { html : '<label for="mootact_message">Message</label><textarea id="mootact_message" name="mootact[message]" class="message" ></textarea>'},
                         { html : '<input type="submit" id="mootact_send" value="Send"/>', "class" : "submit" }
                       ],
-        pelem       : 'content',
+        pelem       : null,
         position    : { position: "center" },
         title: "Contact Form"
     },
     toElement: function(){ return $(this.element); },
     initialize: function(options){
         this.setOptions(options);
-        this.pelem      = this.options.pelem;
+			if(this.options.pelem == null)
+				this.options.pelem = document.body;
+				
+        	this.pelem      = this.options.pelem;
 
         var html = '<a href="#" class="dismiss">&nbsp;</a><h2>'+this.options.title+'</h2><p class="error general"></p>';
         $each(this.options.formRows,function(row){

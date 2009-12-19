@@ -3,7 +3,7 @@
 	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
 	<title>MooTact Test Page</title>
 
-	<link rel="stylesheet" href="mootact.css" type="text/css" media="screen" title="MooTact" charset="utf-8" />
+	<link rel="stylesheet" href="Source/mootact-nc.css" type="text/css" media="screen" title="MooTact" charset="utf-8" />
 	<style type="text/css" media="screen">
 			html, body{ padding:0; margin:0; }
 			body { font-family: "Arial Rounded", "Arial Rounded MT Bold",sans-serif;}
@@ -22,7 +22,7 @@
 			}
 
 			#mootact_button{
-			    background: transparent url(mail0a.png) no-repeat 0 12px;
+			    background: transparent url(Source/mail0a.png) no-repeat 0 12px;
 				  padding: 32px 32px 32px 72px;
 			    font-size:14pt;
 			}
@@ -41,7 +41,7 @@
   <script type="text/javascript" src="/js/mootools-1.2.4.2-more.js"></script>      
 
 
-	<script type="text/javascript" src="mootact.js"></script>
+	<script type="text/javascript" src="Source/mootact-nc.js"></script>
 
 
 
@@ -51,7 +51,6 @@
 						      e.stop();
 						      new MooTact( { 
 																 title : 'MooTact Contact Form', 
-																 pelem : document.body,
 						                     onSuccess: function(){  $("notify").set('html', 'E-mail sent ... Thank you!' ); } 
                    }).show(); 
 				  });			
