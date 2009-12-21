@@ -29,55 +29,9 @@ How to use
     		  });			
     });
 
-## Post Parameters
-By default MooTact will POST the following URL parameters
-
-- mootact[email]	
-- mootact[message]	
-- mootact[name]	
-- mootact[subject]
-
-
-## Backend Script
-The [backend script](http://github.com/simulacre/MooTact/blob/master/backend/web/send.json.php) that handles the input must return a JSON object containing either a string-value pair indicating 
-success, or an exception object indicating failure.
-
-
-### Valid Input
-
-If the input is valid and the message is sent successfully return a JSON object with a success code:
-    #JS
-    { "success" : 1 }
-
-
-### Invalid Input
-
-If the input is invalid, or the message cannot be sent then return a JSON object detailing the errors:
-    #JS
-
-    {    	"exception" : {
-     	  	'general' 	: "general error message",
-       		'fields'		: {
-    							"name"	    : "Name is required",
-    							"subject"	: "Subject is required",
-    							"email"     : "A valid e-mail address is required"
-    				 			etc,
-    			  	  		  } 
-    		} }
-
-
-### Installing the Backend Script
-
-You can write your own backend script, or use [send.json.php](http://github.com/simulacre/MooTact/blob/master/backend/web/send.json.php), which is provided in [backend/web](http://github.com/simulacre/MooTact/tree/master/backend/web/). To use send.json.php
-1. Drop it on your web server
-2. Place [config.php](http://github.com/simulacre/MooTact/blob/master/backend/config.php) and [Swift Mailer](http://github.com/simulacre/MooTact/tree/master/backend/lib/Swift-4.0.5/) outside of a web accessible directory
-3. Change $configFile and $swiftLoc variables to point to their appropriate spots
-4. Change config.php with your SMTP details, e.g., address, username, password
-
-
 ## Changing the Form
 
-#### Markup
+### Markup
 To change the markup for the form pass in an array of form-row objects when instantiating the MooTact object.
 Each form-row object must at least have an "html" member. Any other Element properties may also be defined as 
 members of the form-row object.
@@ -95,7 +49,7 @@ members of the form-row object.
         ...
         }).show();
 
-##### Default "form-rows"
+#### Default "form-rows"
     #JS
     {
         "form-rows"    : [
@@ -107,13 +61,74 @@ members of the form-row object.
                       ]
     }
 
-#### CSS
+### CSS
 See 
 
 - [mootact-nc.css](http://github.com/simulacre/MooTact/blob/master/Source/mootact-nc.css)
 - [mootact-ie6-nc.css](http://github.com/simulacre/MooTact/blob/master/Source/mootact-ie6-nc.css)
 
-## Demo
+
+
+
+
+Backend Script
+--------------
+The [backend script](http://github.com/simulacre/MooTact/blob/master/backend/web/send.json.php) that handles the input must return a JSON object containing either a string-value pair indicating success, or an exception object indicating failure.
+
+## Post Parameters
+By default MooTact will POST the following URL parameters
+
+- mootact[email]	
+- mootact[message]	
+- mootact[name]	
+- mootact[subject]
+
+## Valid Input
+
+If the input is valid and the message is sent successfully return a JSON object with a success code:
+    #JS
+    { "success" : 1 }
+
+
+## Invalid Input
+
+If the input is invalid, or the message cannot be sent then return a JSON object detailing the errors:
+    #JS
+
+    {    	"exception" : {
+     	  	'general' 	: "general error message",
+       		'fields'		: {
+    							"name"	    : "Name is required",
+    							"subject"	: "Subject is required",
+    							"email"     : "A valid e-mail address is required"
+    				 			etc,
+    			  	  		  } 
+    		} }
+
+
+## Installing the Backend Script
+
+You can write your own backend script, or use [send.json.php](http://github.com/simulacre/MooTact/blob/master/backend/web/send.json.php), which is provided in [backend/web](http://github.com/simulacre/MooTact/tree/master/backend/web/). To use send.json.php
+1. Drop it on your web server
+2. Place [config.php](http://github.com/simulacre/MooTact/blob/master/backend/config.php) and [Swift Mailer](http://github.com/simulacre/MooTact/tree/master/backend/lib/Swift-4.0.5/) outside of a web accessible directory
+3. Change $configFile and $swiftLoc variables to point to their appropriate spots
+4. Change config.php with your SMTP details, e.g., address, username, password
+
+
+Options
+-------
+ - url : (string) The relative or absolute URL of the backend script
+ - class : (string) The class name to give the form
+ - prefix : (string) The prefix used when defining the ids of the input fields
+ - form-rows : (array) Ojects to that will be used to create each row of the form
+ - pelem  : (string or Element)The parent element for the form *defaults* to document.body
+ - position : (object) Standard object used by Element.Position { position: "center" },
+ - title : (string) The title to display at the top of the form
+
+
+
+Demo
+----
 
 - [MooTact Demo](http://mootact.simulacre.org/index.html)
 - [Custom MooTact Demo](http://mootact.simulacre.org/custom.html)
