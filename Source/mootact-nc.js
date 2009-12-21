@@ -7,7 +7,7 @@ license: MIT-style
 authors:
 - Caleb Crane
 
-requires: [Request.JSON, Element.Position, Spinner, Mask]
+requires: [core:1.2.4:Request.JSON, more:1.2.4:Element.Position, more:1.2.4:Spinner, more:1.2.4:Mask]
 provides: [MooTact]
 
 */
