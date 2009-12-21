@@ -29,6 +29,7 @@ How to use
     		  });			
     });
 
+#Post Parameters
 By default MooTact will POST the following URL parameters
 mootact[email]	
 mootact[message]	
@@ -36,6 +37,7 @@ mootact[name]
 mootact[subject]
 
 
+#Backend Script
 The backend script that handles the input must return a JSON object containing either a string-value pair indicating 
 success, or an exception object indicating failure.
 
@@ -61,6 +63,7 @@ If the input is invalid, or the message cannot be sent then return a JSON object
     		} }
 
 
+#Installing the Backend Script
 You can write your own backend script, or use send.json.php, which is provided in backend/web. To use send.json.php
 1. Drop it on your web server
 2. Place config.php and Swift Mailer outside of a web accessible directory
