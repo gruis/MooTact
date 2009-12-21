@@ -5,7 +5,7 @@ MooTact
  The user's input is submitted with Request.JSON and expects the server to respond with JSON. A [simple PHP server script](http://github.com/simulacre/MooTact/blob/master/backend/web/send.json.php)
  that leverages [Swift Mailer](http://swiftmailer.org/) is provided.
  
- ![Screenshot](http://kanjitastic.com/MooTact/images/screenshot.png)
+ ![Screenshot](http://mootact.simulacre.org/images/screenshot.png)
 
 How to use
 ----------
@@ -72,4 +72,4 @@ You can write your own backend script, or use [send.json.php](http://github.com/
 
 
 #Demo
-[MooTact Demo](http://kanjitastic.com/MooTact/index.html)  [@kanjitastic](http://www.kanjitastic.com)
+[MooTact Demo](http://mootact.simulacre.org/)
