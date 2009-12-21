@@ -9,7 +9,7 @@ authors:
    - Caleb Crane (http://www.simulacre.org)
 
 requires: 
-   - core/1.2.4: Request.JSON
+   - core/1.2.4: *
    - more/1.2.4: Element.Position
    - more/1.2.4: Spinner
    - more/1.2.4: Mask
