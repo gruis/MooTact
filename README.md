@@ -94,7 +94,7 @@ members of the form-row object.
         ...
         }).show();
 
-### Default "form-rows"
+##### Default "form-rows"
     #JS
     {
         "form-rows"    : [
