@@ -10,9 +10,7 @@ authors:
 
 requires: 
   core/1.2.1: 'Request.JSON'
-  more/1.2.4: 'Element.Position'
-  more/1.2.4: 'Spinner'
-  more/1.2.4: 'Mask'
+  more/1.2.4: 'Element.Position', 'Spinner', 'Mask'
  
 provides: 
    - MooTact
