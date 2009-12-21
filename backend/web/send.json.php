@@ -1,11 +1,17 @@
 <?php
+
+$configFile = "../config.php";
+$swiftLoc    = '../lib/Swift-4.0.5/lib/';
+
 class mtConfig{
 	private static $params;
 	
     private static $instance;
 
-	public function __construct(){		
-		include("../config.php");
+	public function __construct(){
+	    global $configFile;
+	    
+		include($configFile);
 		if(isset($params) && is_array($params))
 			$this->params = $params;
 	}
@@ -107,7 +113,8 @@ function getTxtMsg($msg){
 }
 
 function sendMessage($msg){
-		require_once '../lib/Swift-4.0.5/lib/swift_required.php';
+        global $swiftLoc;
+		require_once $swiftLoc.'swift_required.php';
 
 		$transport = Swift_SmtpTransport::newInstance(mtConfig::get("smtp_server"), mtConfig::get("smtp_port", 25))
 												->setUsername(mtConfig::get("smtp_user"))
@@ -161,7 +168,7 @@ function executeSend($request){
  *  ===-------------------------------------------------------------------------------===
  * 	   Take the user's input, check it for validity and try to send it out using Swift. 
  *     If the input is invalid, or the message cannot be sent then return a JSON object 
- *	   detailing the errors will be returend:
+ *	   detailing the errors will be returned:
  *		{
  * 	    	"exception" : {
  *		 	  	'general' 	: "general error message",
