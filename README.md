@@ -11,24 +11,23 @@ How to use
 ----------
  Instantiate a MooTact object and call show();
 #JS
-
-window.addEvent("domready", function(){
-		$("notify").set('highlight', {duration: 'long'});
-	  	$('mootact_button').addEvent("click", function(e){
-						e.stop();
-						$("notify").fade("out");
-						new MooTact( { 
-        							title 	: 'MooTact Contact Form', 
-        							url		: "send.json.php",
-        							onSuccess: function(){
-        								(function(){
-        									$("notify").set('html', 'E-mail sent ... Thank you!' ).fade("in");
-        									(function(){$("notify").highlight(); }).delay(750);											
-        								}).delay(750);
-        							} 
-						}).show(); 
-		  });			
-});
+    window.addEvent("domready", function(){
+    		$("notify").set('highlight', {duration: 'long'});
+    	  	$('mootact_button').addEvent("click", function(e){
+    						e.stop();
+    						$("notify").fade("out");
+    						new MooTact( { 
+            							title 	: 'MooTact Contact Form', 
+            							url		: "send.json.php",
+            							onSuccess: function(){
+            								(function(){
+            									$("notify").set('html', 'E-mail sent ... Thank you!' ).fade("in");
+            									(function(){$("notify").highlight(); }).delay(750);											
+            								}).delay(750);
+            							} 
+    						}).show(); 
+    		  });			
+    });
 
 By default MooTact will POST the following URL parameters
 mootact[email]	
@@ -41,13 +40,16 @@ The backend script that handles the input must return a JSON object containing e
 success, or an exception object indicating failure.
 
 
-#JS
+#Valid Input
 If the input is valid and the message is sent successfully a JSON object with a success code will be returned:
+#JS
     { "success" : 1 }
 
 
-#JS
+#Invalid Input
 If the input is invalid, or the message cannot be sent then return a JSON object detailing the errors will be returned:
+#JS
+
     {    	"exception" : {
      	  	'general' 	: "general error message",
        		'fields'		: {
