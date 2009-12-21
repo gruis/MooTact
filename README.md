@@ -10,7 +10,7 @@ MooTact
 How to use
 ----------
  Instantiate a MooTact object and call show();
-#JS
+    #JS
     window.addEvent("domready", function(){
     		$("notify").set('highlight', {duration: 'long'});
     	  	$('mootact_button').addEvent("click", function(e){
@@ -29,7 +29,7 @@ How to use
     		  });			
     });
 
-#Post Parameters
+## Post Parameters
 By default MooTact will POST the following URL parameters
 mootact[email]	
 mootact[message]	
@@ -37,20 +37,22 @@ mootact[name]
 mootact[subject]
 
 
-#Backend Script
+## Backend Script
 The [backend script](http://github.com/simulacre/MooTact/blob/master/backend/web/send.json.php) that handles the input must return a JSON object containing either a string-value pair indicating 
 success, or an exception object indicating failure.
 
 
-#Valid Input
-If the input is valid and the message is sent successfully a JSON object with a success code will be returned:
-#JS
+### Valid Input
+
+If the input is valid and the message is sent successfully return a JSON object with a success code:
+    #JS
     { "success" : 1 }
 
 
-#Invalid Input
-If the input is invalid, or the message cannot be sent then return a JSON object detailing the errors will be returned:
-#JS
+### Invalid Input
+
+If the input is invalid, or the message cannot be sent then return a JSON object detailing the errors:
+    #JS
 
     {    	"exception" : {
      	  	'general' 	: "general error message",
@@ -63,13 +65,15 @@ If the input is invalid, or the message cannot be sent then return a JSON object
     		} }
 
 
-#Installing the Backend Script
-You can write your own backend script, or use [send.json.php](http://github.com/simulacre/MooTact/blob/master/backend/web/send.json.php), which is provided in backend/web. To use send.json.php
+### Installing the Backend Script
+
+You can write your own backend script, or use [send.json.php](http://github.com/simulacre/MooTact/blob/master/backend/web/send.json.php), which is provided in [backend/web](http://github.com/simulacre/MooTact/tree/master/backend/web/). To use send.json.php
 1. Drop it on your web server
 2. Place [config.php](http://github.com/simulacre/MooTact/blob/master/backend/config.php) and [Swift Mailer](http://github.com/simulacre/MooTact/tree/master/backend/lib/Swift-4.0.5/) outside of a web accessible directory
 3. Change $configFile and $swiftLoc variables to point to their appropriate spots
 4. Change config.php with your SMTP details, e.g., address, username, password
 
 
-#Demo
+## Demo
+
 [MooTact Demo](http://mootact.simulacre.org/)
