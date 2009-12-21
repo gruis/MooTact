@@ -112,5 +112,5 @@ See [mootact-nc.css](http://github.com/simulacre/MooTact/blob/master/Source/moot
 
 ## Demo
 
-[MooTact Demo](http://mootact.simulacre.org/index.html)
-[Custom MooTact Demo](http://mootact.simulacre.org/custom.html)
+- [MooTact Demo](http://mootact.simulacre.org/index.html)
+- [Custom MooTact Demo](http://mootact.simulacre.org/custom.html)
