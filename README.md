@@ -75,7 +75,7 @@ Options
  - prefix : (string) The prefix used when defining the ids of the input fields
  - form-rows : (array) Ojects to that will be used to create each row of the form
  - pelem  : (string or Element)The parent element for the form *defaults* to document.body
- - position : (object) Standard object used by Element.Position { position: "center" },
+ - position : (object) Standard object used by Element.Position, e.g., { position: "center" },
  - title : (string) The title to display at the top of the form
 
 
