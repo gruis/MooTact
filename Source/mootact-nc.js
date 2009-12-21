@@ -155,17 +155,21 @@ var MooTact = new Class({
         new Request.JSON({ url : this.options.url, 
                                 onSuccess : function(res){ 
                                         $(me).unspin();
-
-                                        if(typeof res.success != "undefined"){
+                                        if(!res){
+                                          me.showErrors( { general : 'Error: The server returned an error' } );
+                                          return;                                          
+                                        }
+                                          
+                                        if(res.success){
                                             me.fireEvent("success");
                                             me.dismiss();
                                             return;
                                         }
-                                        me.showErrors((typeof res.exception != undefined) ? res.exception : { general : 'Error: The server returned an error' } );
+                                        if(res.exception)
+                                          me.showErrors( res.exception ? { general : 'Error: The server returned an error' } : res.exception );
                                         me.fireEvent("error");
                                 },
                                 onException: function(){
-												
                                     me.showErrors({ general : 'Error: The server returned an error' } );
                                     $(me).unspin();
                                     me.fireEvent("exception");
