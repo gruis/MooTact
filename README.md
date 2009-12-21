@@ -2,7 +2,7 @@ MooTact
 ===========
  MooTact generates and displays a contact form on top of a mask over the rest of the page. It's a Lightbox Contact Form.
  
- The user's input is submitted with Request.JSON and expects the server to respond with JSON. A simple PHP server script
+ The user's input is submitted with Request.JSON and expects the server to respond with JSON. A [simple PHP server script](http://github.com/simulacre/MooTact/blob/master/backend/web/send.json.php)
  that leverages [Swift Mailer](http://swiftmailer.org/) is provided.
  
  ![Screenshot](http://kanjitastic.com/MooTact/images/screenshot.png)
