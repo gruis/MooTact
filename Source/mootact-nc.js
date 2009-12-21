@@ -3,20 +3,21 @@
 description:    MooTact class displays a custom contact form, posts the user's message to the server and handles the JSON response. It's a Lightboxed contact form.
 
 license: 
- - MIT-style
+   - MIT-style
 
 authors:
- - Caleb Crane (http://www.simulacre.org)
+   - Caleb Crane (http://www.simulacre.org)
 
 requires: 
- - core:1.2.4:Request.JSON
- - more:1.2.4:Element.Position
- - more:1.2.4:Spinner
- - more:1.2.4:Mask
+   - core:1.2.4:Request.JSON
+   - more:1.2.4:Element.Position
+   - more:1.2.4:Spinner
+   - more:1.2.4:Mask
  
 provides: 
- - MooTact
+   - MooTact
 
+...
 */
 var MooTact = new Class({
     Implements: [ Options, Events ],
