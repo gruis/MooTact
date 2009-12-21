@@ -40,23 +40,23 @@ mootact[subject]
 The backend script that handles the input must return a JSON object containing either a string-value pair indicating 
 success, or an exception object indicating failure.
 
-If the input is valid and the message is sent successfully a JSON object with a success code will be returned:
-#JS
-{ "success" : 1 }
 
-If the input is invalid, or the message cannot be sent then return a JSON object detailing the errors will be returned:
 #JS
-{
-    	"exception" : {
- 	  	'general' 	: "general error message",
-   		'fields'		: {
-							"name"	    : "Name is required",
-							"subject"	: "Subject is required",
-							"email"     : "A valid e-mail address is required"
-				 			etc,
-			  	  		  } 
-		}
-}
+If the input is valid and the message is sent successfully a JSON object with a success code will be returned:
+    { "success" : 1 }
+
+
+#JS
+If the input is invalid, or the message cannot be sent then return a JSON object detailing the errors will be returned:
+    {    	"exception" : {
+     	  	'general' 	: "general error message",
+       		'fields'		: {
+    							"name"	    : "Name is required",
+    							"subject"	: "Subject is required",
+    							"email"     : "A valid e-mail address is required"
+    				 			etc,
+    			  	  		  } 
+    		} }
 
 
 You can write your own backend script, or use send.json.php, which is provided in backend/web. To use send.json.php
@@ -64,6 +64,5 @@ You can write your own backend script, or use send.json.php, which is provided i
 2. Place config.php and Swift Mailer outside of a web accessible directory
 3. Change $configFile and $swiftLoc variables to point to their appropriate spots
 4. Change config.php with your SMTP details, e.g., address, username, password
-
 
 
