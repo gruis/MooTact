@@ -31,10 +31,11 @@ How to use
 
 ## Post Parameters
 By default MooTact will POST the following URL parameters
-mootact[email]	
-mootact[message]	
-mootact[name]	
-mootact[subject]
+
+- mootact[email]	
+- mootact[message]	
+- mootact[name]	
+- mootact[subject]
 
 
 ## Backend Script
