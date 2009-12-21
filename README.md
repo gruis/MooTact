@@ -10,6 +10,7 @@ MooTact
 How to use
 ----------
  Instantiate a MooTact object and call show();
+ 
     #JS
     window.addEvent("domready", function(){
     		$("notify").set('highlight', {duration: 'long'});
