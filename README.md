@@ -66,7 +66,7 @@ If the input is invalid, or the message cannot be sent then return a JSON object
 #Installing the Backend Script
 You can write your own backend script, or use [send.json.php](http://github.com/simulacre/MooTact/blob/master/backend/web/send.json.php), which is provided in backend/web. To use send.json.php
 1. Drop it on your web server
-2. Place config.php and Swift Mailer outside of a web accessible directory
+2. Place [config.php](http://github.com/simulacre/MooTact/blob/master/backend/config.php) and [Swift Mailer](http://github.com/simulacre/MooTact/tree/master/backend/lib/Swift-4.0.5/) outside of a web accessible directory
 3. Change $configFile and $swiftLoc variables to point to their appropriate spots
 4. Change config.php with your SMTP details, e.g., address, username, password
 
