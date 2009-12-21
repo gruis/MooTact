@@ -64,7 +64,7 @@ var MooTact = new Class({
         url         : '/mootact',
         "class"     : 'mootact',
         prefix      : 'mootact_',
-        formRows    : [
+        "form-rows"    : [
                         { html : '<label for="mootact_name">Name</label><input type="text" id="mootact_name" name="mootact[name]" class="name" />'},
                         { html : '<label for="mootact_email">E-mail</label><input type="text" id="mootact_email" name="mootact[email]" class="email" />'},
                         { html : '<label for="mootact_subject">Subject</label><input type="text" id="mootact_subject" name="mootact[subject]" class="subject" />'},
@@ -78,19 +78,15 @@ var MooTact = new Class({
     toElement: function(){ return $(this.element); },
     initialize: function(options){
         this.setOptions(options);
-			if(this.options.pelem == null)
-				this.options.pelem = document.body;
-				
-        	this.pelem      = this.options.pelem;
-
-        var html = '<a href="#" class="dismiss">&nbsp;</a><h2>'+this.options.title+'</h2><p class="error general"></p>';
-        $each(this.options.formRows,function(row){
-                var c = "form-row";
-                if(row["class"])
-                    c += " " + row["class"];
-                html += '<div class="'+c+'">'+row.html+'</div>';
-        });
-        this.element    = new Element('form', { id : "mootact-"+ Math.floor(Math.random()*1000000000).toString(16), method : "POST", action : this.options.submitURL, "class" : this.options["class"], html : html });
+  			if(this.options.pelem == null)
+  				this.options.pelem = document.body;
+			
+      	this.pelem      = this.options.pelem;
+        this.element    = new Element('form', { id : "mootact-"+ Math.floor(Math.random()*1000000000).toString(16), method : "POST", action : this.options.submitURL, "class" : this.options["class"], "html" : '<a href="#" class="dismiss">&nbsp;</a><h2>'+this.options.title+'</h2><p class="error general"></p>' });
+      
+        $each(this.options["form-rows"],function(row){
+                this.element.adopt(new Element('div', row).addClass("form-row"));
+        }.bind(this));
 
         this.element.addEvent("submit", function(e){
            e.stop();
@@ -99,7 +95,7 @@ var MooTact = new Class({
 
 
 
-        this.element.set("html",html);
+        
 
         $(this).getElement("a.dismiss").addEvent("click", function(e){
             e.stop;

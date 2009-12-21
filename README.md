@@ -74,6 +74,43 @@ You can write your own backend script, or use [send.json.php](http://github.com/
 4. Change config.php with your SMTP details, e.g., address, username, password
 
 
+## Changing the Form
+
+#### Markup
+To change the markup for the form pass in an array of form-row objects when instantiating the MooTact object.
+Each form-row object must at least have an "html" member. Any other Element properties may also be defined as 
+members of the form-row object.
+
+    #JS
+    new MooTact( { 
+        ...
+    	"form-rows"    : [
+                        { html : '<label for="mootact_name">Name</label><input type="text" id="mootact_name" name="mootact[name]" />'},
+                        { html : '<label for="mootact_email">E-mail</label><input type="text" id="mootact_email" name="mootact[email]" />'},
+                        { html : '<label for="mootact_subject">Subject</label><select id="mootact_subject" name="mootact[subject]"><option value="feature_request">Feature Request</option><option value="bug">Bug</option></select>'},
+                        { html : '<label for="mootact_message">Message</label><textarea id="mootact_message" name="mootact[message]" class="message" ></textarea>'},
+                        { html : '<input type="submit" id="mootact_send" value="Send"/>', "class" : "submit" }
+                      ],
+        ...
+        }).show();
+
+### Default "form-rows"
+    #JS
+    {
+        "form-rows"    : [
+                        { html : '<label for="mootact_name">Name</label><input type="text" id="mootact_name" name="mootact[name]" class="name" />'},
+                        { html : '<label for="mootact_email">E-mail</label><input type="text" id="mootact_email" name="mootact[email]" class="email" />'},
+                        { html : '<label for="mootact_subject">Subject</label><input type="text" id="mootact_subject" name="mootact[subject]" class="subject" />'},
+                        { html : '<label for="mootact_message">Message</label><textarea id="mootact_message" name="mootact[message]" class="message" ></textarea>'},
+                        { html : '<input type="submit" id="mootact_send" value="Send"/>', "class" : "submit" }
+                      ]
+    }
+
+#### CSS
+See [mootact-nc.css](http://github.com/simulacre/MooTact/blob/master/Source/mootact-nc.css)
+
+
 ## Demo
 
-[MooTact Demo](http://mootact.simulacre.org/)
+[MooTact Demo](http://mootact.simulacre.org/index.html)
+[Custom MooTact Demo](http://mootact.simulacre.org/custom.html)
