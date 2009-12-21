@@ -68,7 +68,15 @@ See
 - [mootact-ie6-nc.css](http://github.com/simulacre/MooTact/blob/master/Source/mootact-ie6-nc.css)
 
 
-
+Options
+-------
+ - url : (string) The relative or absolute URL of the backend script
+ - class : (string) The class name to give the form
+ - prefix : (string) The prefix used when defining the ids of the input fields
+ - form-rows : (array) Ojects to that will be used to create each row of the form
+ - pelem  : (string or Element)The parent element for the form *defaults* to document.body
+ - position : (object) Standard object used by Element.Position { position: "center" },
+ - title : (string) The title to display at the top of the form
 
 
 Backend Script
@@ -115,15 +123,7 @@ You can write your own backend script, or use [send.json.php](http://github.com/
 4. Change config.php with your SMTP details, e.g., address, username, password
 
 
-Options
--------
- - url : (string) The relative or absolute URL of the backend script
- - class : (string) The class name to give the form
- - prefix : (string) The prefix used when defining the ids of the input fields
- - form-rows : (array) Ojects to that will be used to create each row of the form
- - pelem  : (string or Element)The parent element for the form *defaults* to document.body
- - position : (object) Standard object used by Element.Position { position: "center" },
- - title : (string) The title to display at the top of the form
+
 
 
 
