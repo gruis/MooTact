@@ -3,15 +3,17 @@
 $configFile = "../config.php";
 $swiftLoc    = '../lib/Swift-4.0.5/lib/';
 
-class mtConfig{
+class mtConfig {
 	private static $params;
 	
     private static $instance;
 
 	public function __construct(){
+
 	    global $configFile;
-	    
-		include($configFile);
+		if(!include($configFile)){
+		    throw new Exception("Config file not found");
+		}
 		if(isset($params) && is_array($params))
 			$this->params = $params;
 	}
@@ -114,6 +116,7 @@ function getTxtMsg($msg){
 
 function sendMessage($msg){
         global $swiftLoc;
+        
 		require_once $swiftLoc.'swift_required.php';
 
 		$transport = Swift_SmtpTransport::newInstance(mtConfig::get("smtp_server"), mtConfig::get("smtp_port", 25))
@@ -189,14 +192,18 @@ function executeSend($request){
 try{
 	$errors = executeSend(new mtRequest());	
 } catch(Exception $e){
-	$errors = array("general" => 'Failed to send message. Please contact us directly at: <a href="mailto:'.mtConfig::get("send_to").'">'.mtConfig::get("send_to").'</a>');
+	try{
+		$errors = array("general" => 'Failed to send message. Please contact us directly at: <a href="mailto:'.mtConfig::get("send_to").'">'.mtConfig::get("send_to").'</a>');		
+	} catch(Exception $e){
+		$errors = array("general" => "Server configuration error");
+	}
+
 }
 header("Content-type: application/json");
 ?>
-{
+
 <?php if(count($errors)): ?>
-    "exception" : <?php echo json_encode($errors); ?>
+    {"exception" : <?php echo json_encode($errors); ?> }
 <?php else: ?>
-    "success" : 1
+   { "success" : 1 }
 <?php endif; ?>
-}
